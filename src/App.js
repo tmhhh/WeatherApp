@@ -1,23 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
-
+import MainSection from "./components/MainSection";
+import AdditionalSection from "./components/AdditionalSection";
+import WeatherContextProvider from "./contexts/weatherContext";
+const formStyle = {
+  background: "linear-gradient(#e66465, #9198e5)",
+  width: "400px",
+  paddingTop: "20px",
+  borderRadius: "10px",
+};
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={formStyle}>
+      <WeatherContextProvider>
+        <MainSection />
+        <AdditionalSection />
+      </WeatherContextProvider>
     </div>
   );
 }
